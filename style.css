@@ -42,37 +42,8 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
 }
-/* Шрифты MagnetTrial */
-@font-face {
-  font-family: 'MagnetTrial Light';
-  src: url('assets/font/MagnetTrial-Light.woff2') format('woff2');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'MagnetTrial Regular';
-  src: url('assets/font/MagnetTrial-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'MagnetTrial SemiBold';
-  src: url('assets/font/MagnetTrial-SemiBold.woff2') format('woff2');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'MagnetTrial Bold';
-  src: url('assets/font/MagnetTrial-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
 body {
-  font-family: 'MagnetTrial Regular', system-ui, -apple-system, sans-serif;
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
 }
 
 img {
@@ -157,7 +128,7 @@ input, textarea {
 
 /* Кнопки */
 .btn {
-  font-family: 'MagnetTrial SemiBold', sans-serif;
+  font-family: 'Poppins', sans-serif
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -382,7 +353,7 @@ input, textarea {
   margin-bottom: 18px;
 }
 .hero-title {
-  font-family: 'MagnetTrial Bold', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: clamp(3.2rem, 9vw, 6.5rem);
   font-weight: 800;
   letter-spacing: -0.03em;
@@ -394,7 +365,7 @@ input, textarea {
   margin-bottom: 16px;
 }
 .hero-subtitle {
-  font-family: 'MagnetTrial SemiBold', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: clamp(1.35rem, 3.6vw, 1.85rem);
   font-weight: 400;
   color: var(--text-2);
@@ -800,6 +771,7 @@ section {
   gap: 8px;
 }
 .skill-tag {
+  font-family: 'Poppins', sans-serif;
   display: inline-block;
   padding: 6px 14px;
   border-radius: 50px;
@@ -886,6 +858,7 @@ section {
   flex-wrap: wrap;
 }
 .timeline-role {
+  font-family: 'Poppins', sans-serif;
   font-size: 0.92rem;
   font-weight: 600;
   color: var(--text);
