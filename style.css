@@ -42,32 +42,30 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
 }
-
-/* Шрифты Bajazzo (если есть файлы) */
 @font-face {
   font-family: 'Bajazzo Rg';
-  src: url('assets/font/Bajazzo-Rg.woff2') format('opentype');
+  src: url('assets/font/Bajazzo-Rg.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Bajazzo-Smbd';
-  src: url('assets/font/Bajazzo-Smbd.woff2') format('opentype');
+  src: url('assets/font/Bajazzo-Smbd.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Bajazzo-Bd';
-  src: url('assets/font/Bajazzo-Bd.woff2') format('opentype');
+  src: url('assets/font/Bajazzo-Bd.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Bajazzo-Exp';
-  src: url('assets/font/Bajazzo-Exp.woff2') format('opentype');
+  src: url('assets/font/Bajazzo-Exp.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
