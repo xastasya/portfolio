@@ -1,6 +1,6 @@
 <?php
 $botToken = "8068756225:AAGPR4l0w6JT053fChcSci0eh9yfrdAnNto";
-$chatId   = "6234826140";   // ваш Chat ID
+$chatId   = "6234826140";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name    = htmlspecialchars(trim($_POST['name'] ?? ''));
@@ -25,22 +25,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         'parse_mode' => 'Markdown'
     ]);
 
-    $options = [
-        'http' => [
-            'header'  => "Content-Type: application/x-www-form-urlencoded\r\n",
-            'method'  => 'POST',
-            'content' => $postData,
-        ]
-    ];
+    // Используем cURL
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // если сертификаты не проверяются
+    curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/x-www-form-urlencoded']);
 
-    $context = stream_context_create($options);
-    $result = file_get_contents($url, false, $context);
+    $result = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    $error = curl_error($ch);
+    curl_close($ch);
 
-    if ($result === false) {
-        http_response_code(500);
-        echo "Ошибка отправки.";
-    } else {
+    if ($result !== false && $httpCode == 200) {
         echo "success";
+    } else {
+        http_response_code(500);
+        echo "Ошибка отправки. HTTP-код: $httpCode. Ошибка cURL: $error";
     }
 } else {
     http_response_code(405);
