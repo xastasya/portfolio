@@ -128,7 +128,7 @@ input, textarea {
 
 /* Кнопки */
 .btn {
-  font-family: 'Poppins', sans-serif
+  font-family: 'Poppins', sans-serif;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -196,6 +196,7 @@ input, textarea {
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+  margin-top: -4px;
 }
 
 .logo-svg {
