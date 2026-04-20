@@ -42,36 +42,37 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
 }
+/* Шрифты Bajazzo */
 @font-face {
-  font-family: 'Bajazzo Rg';
-  src: url('assets/font/Bajazzo-Rg.woff2') format('woff2');
+  font-family: 'Bajazzo Md';
+  src: url('assets/font/Bajazzo-Md.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Bajazzo-Smbd';
-  src: url('assets/font/Bajazzo-Smbd.woff2') format('woff2');
+  font-family: 'Bajazzo Bd';
+  src: url('assets/font/Bajazzo-Bd.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Bajazzo-Bd';
-  src: url('assets/font/Bajazzo-Bd.woff2') format('woff2');
+  font-family: 'Bajazzo Blk';
+  src: url('assets/font/Bajazzo-Blk.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Bajazzo-Exp';
-  src: url('assets/font/Bajazzo-Exp.woff2') format('woff2');
+  font-family: 'Bajazzo Smbd';
+  src: url('assets/font/Bajazzo-Smbd.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 body {
-  font-family: 'Bajazzo Rg', system-ui, -apple-system, sans-serif;
+  font-family: 'Bajazzo Md', system-ui, -apple-system, sans-serif;
 }
 
 img {
@@ -380,7 +381,7 @@ input, textarea {
   margin-bottom: 18px;
 }
 .hero-title {
-  font-family: 'Bajazzo-Exp', sans-serif;
+  font-family: 'Bajazzo Bd', sans-serif;
   font-size: clamp(3.2rem, 9vw, 6.5rem);
   font-weight: 800;
   letter-spacing: -0.03em;
