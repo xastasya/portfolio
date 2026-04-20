@@ -46,28 +46,28 @@ body {
 /* Шрифты Bajazzo (если есть файлы) */
 @font-face {
   font-family: 'Bajazzo Rg';
-  src: url('assets/font/Bajazzo-Rg.otf') format('opentype');
+  src: url('assets/font/Bajazzo-Rg.woff2') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Bajazzo-Smbd';
-  src: url('assets/font/Bajazzo-Smbd.otf') format('opentype');
+  src: url('assets/font/Bajazzo-Smbd.woff2') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Bajazzo-Bd';
-  src: url('assets/font/Bajazzo-Bd.otf') format('opentype');
+  src: url('assets/font/Bajazzo-Bd.woff2') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Bajazzo-Exp';
-  src: url('assets/font/Bajazzo-Exp.otf') format('opentype');
+  src: url('assets/font/Bajazzo-Exp.woff2') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
