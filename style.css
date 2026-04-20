@@ -42,37 +42,37 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
 }
-/* Шрифты Bajazzo */
+/* Шрифты MagnetTrial */
 @font-face {
-  font-family: 'Bajazzo Md';
-  src: url('assets/font/Bajazzo-Md.otf') format('opentype');
-  font-weight: normal;
+  font-family: 'MagnetTrial Light';
+  src: url('assets/font/MagnetTrial-Light.woff2') format('woff2');
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Bajazzo Bd';
-  src: url('assets/font/Bajazzo-Bd.otf') format('opentype');
-  font-weight: normal;
+  font-family: 'MagnetTrial Regular';
+  src: url('assets/font/MagnetTrial-Regular.woff2') format('woff2');
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Bajazzo Blk';
-  src: url('assets/font/Bajazzo-Blk.otf') format('opentype');
-  font-weight: normal;
+  font-family: 'MagnetTrial SemiBold';
+  src: url('assets/font/MagnetTrial-SemiBold.woff2') format('woff2');
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Bajazzo Smbd';
-  src: url('assets/font/Bajazzo-Smbd.otf') format('opentype');
-  font-weight: normal;
+  font-family: 'MagnetTrial Bold';
+  src: url('assets/font/MagnetTrial-Bold.woff2') format('woff2');
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 body {
-  font-family: 'Bajazzo Md', system-ui, -apple-system, sans-serif;
+  font-family: 'MagnetTrial Regular', system-ui, -apple-system, sans-serif;
 }
 
 img {
@@ -157,6 +157,7 @@ input, textarea {
 
 /* Кнопки */
 .btn {
+  font-family: 'MagnetTrial SemiBold', sans-serif;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -381,7 +382,7 @@ input, textarea {
   margin-bottom: 18px;
 }
 .hero-title {
-  font-family: 'Bajazzo Bd', sans-serif;
+  font-family: 'MagnetTrial Bold', sans-serif;
   font-size: clamp(3.2rem, 9vw, 6.5rem);
   font-weight: 800;
   letter-spacing: -0.03em;
@@ -393,6 +394,7 @@ input, textarea {
   margin-bottom: 16px;
 }
 .hero-subtitle {
+  font-family: 'MagnetTrial SemiBold', sans-serif;
   font-size: clamp(1.35rem, 3.6vw, 1.85rem);
   font-weight: 400;
   color: var(--text-2);

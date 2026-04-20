@@ -1027,7 +1027,6 @@ function init() {
   initSmoothScroll();
   initBackToTop();
   initScrollReveal();
-  initForm();
   initMobileMenu();
   initModalZoom();
   initModalKeyboard();
