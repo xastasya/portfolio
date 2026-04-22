@@ -121,6 +121,13 @@ thumbnail: 'assets/images/t0.png',
   'assets/images/bo3.png',
   'assets/images/bo4.png'
 ] },
+   { id:47, title:'Ghost Game UI', cat:'ui', catName:'UI Design', catName_ru:'UI Design', 
+  desc_ru:'UI-дизайн элемента интерфейса для игры о поимке призраков. Дизайн представляет собой досье, с помощью которого игрок может определить личность и тип призрака через дедукцию и изучение его поведения. Реализовано в мрачной эстетике хоррор-игр.', 
+  desc_en:'UI design for an interface element in a ghost-catching game. The design is presented as a dossier that allows the player to identify the ghosts identity and type through deduction and studying its behavior. The visual style follows the dark aesthetic of horror games.', year:'2025', tools:'Photoshop', type_ru:'UI/UX', type_en:'UI/UX', images:[
+    'assets/images/go1.png',
+    'assets/images/go2.png',
+    'assets/images/go3.png'
+  ] },
     { id:18, title:'Crafts Game UI', cat:'ui', catName:'UI Design', catName_ru:'UI Design', desc_ru:'UI для крафтовой игры. Инвентарь, меню крафта, торговля.', desc_en:'UI for a crafting game. Inventory, crafting menu, trading.', year:'2025', tools:'Figma, Photoshop', type_ru:'UI/UX', type_en:'UI/UX', images:[
     'assets/images/cr1.png',
     'assets/images/cr2.png',
@@ -442,14 +449,7 @@ thumbnail: 'assets/images/t0.png',
   desc_en:'A large-scale outdoor art installation designed in a low-poly/polygonal style. Engineered the complex multi-faceted geometry of the structure. Developed a color scheme based on ethnic patterns and bold geometric shapes. Supervised the assembly process. Designed for interactive use by park visitors.', year:'2021', tools:'Blender, Photoshop', type_ru:'Арт-объект', type_en:'Art Object', images:[
   'assets/images/in15.png',
   'assets/images/in16.png'
-] },
-{ id:47, title:'Ghost Game UI', cat:'ui', catName:'UI Design', catName_ru:'UI Design', 
-  desc_ru:'UI-дизайн элемента интерфейса для игры о поимке призраков. Дизайн представляет собой досье, с помощью которого игрок может определить личность и тип призрака через дедукцию и изучение его поведения. Реализовано в мрачной эстетике хоррор-игр.', 
-  desc_en:'UI design for an interface element in a ghost-catching game. The design is presented as a dossier that allows the player to identify the ghosts identity and type through deduction and studying its behavior. The visual style follows the dark aesthetic of horror games.', year:'2025', tools:'Photoshop', type_ru:'UI/UX', type_en:'UI/UX', images:[
-    'assets/images/go1.png',
-    'assets/images/go2.png',
-    'assets/images/go3.png'
-  ] },];
+] }];
 
 // ID проектов, которые открываются в вертикальном модале (только изображения)
 const VERTICAL_PROJECT_IDS = [0, 1, 2, 3, 4, 5, 18, 19];
