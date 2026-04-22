@@ -130,8 +130,7 @@ thumbnail: 'assets/images/t0.png',
     { id:18, title:'Crafts Game UI', cat:'ui', catName:'UI Design', catName_ru:'UI Design', desc_ru:'UI для крафтовой игры. Инвентарь, меню крафта, торговля.', desc_en:'UI for a crafting game. Inventory, crafting menu, trading.', year:'2025', tools:'Figma, Photoshop', type_ru:'UI/UX', type_en:'UI/UX', images:[
     'assets/images/cr1.png',
     'assets/images/cr2.png',
-    'assets/images/cr3.png',
-    'assets/images/cr4.png'
+    'assets/images/cr3.png'
   ] },
     { id:19, title:'Web GNX продвижение', cat:'ui', catName:'UI Design', catName_ru:'UI Design', desc_ru:'Продвижение веб-платформы GNX. Лендинг, дашборд, аналитика.', desc_en:'GNX web platform promotion. Landing page, dashboard, analytics.', year:'2025', tools:'Figma, Illustrator', type_ru:'UI/UX', type_en:'UI/UX', images:[
     'assets/images/gn1.png',
