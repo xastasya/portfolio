@@ -122,7 +122,7 @@ thumbnail: 'assets/images/t0.png',
 ] },
    { id:47, title:'Ghost Game UI', cat:'ui', catName:'UI Design', catName_ru:'UI Design', 
   desc_ru:'UI-дизайн элемента интерфейса для игры о поимке призраков. Дизайн представляет собой досье, с помощью которого игрок может определить личность и тип призрака через дедукцию и изучение его поведения. Реализовано в мрачной эстетике хоррор-игр.', 
-  desc_en:'UI design for an interface element in a ghost-catching game. The design is presented as a dossier that allows the player to identify the ghosts identity and type through deduction and studying its behavior. The visual style follows the dark aesthetic of horror games.', year:'2025', tools:'Photoshop', type_ru:'UI/UX', type_en:'UI/UX', images:[
+  desc_en:'UI design for an interface element in a ghost-catching game. The design is presented as a dossier that allows the player to identify the ghosts identity and type through deduction and studying its behavior. The visual style follows the dark aesthetic of horror games.', year:'2026', tools:'Photoshop', type_ru:'UI/UX', type_en:'UI/UX', images:[
     'assets/images/go1.png',
     'assets/images/go2.png',
     'assets/images/go3.png'
