@@ -134,6 +134,32 @@ thumbnail: 'assets/images/t0.png',
     'assets/images/gn4.png',
     'assets/images/gn5.png'
   ] },
+   { id: 48,
+  title:'Постер фестиваля Бессонница',
+  cat:'graphic',
+  catName:'Graphic Design',
+  catName_ru:'Graphic Design',
+  desc_ru:'Poster',
+  desc_en:'Poster',
+  year:'2026',
+  tools:'Illustrator, Photoshop',
+  type_ru:'Постер',
+  type_en:'Poster',
+  images:['assets/images/p_1.png', 'assets/images/p_5.png', 'assets/images/p_2.png']
+},
+   { id: 49,
+  title:'Постер для Благотворительного фонда "Друг"',
+  cat:'graphic',
+  catName:'Graphic Design',
+  catName_ru:'Graphic Design',
+  desc_ru:'Poster',
+  desc_en:'Poster',
+  year:'2026',
+  tools:'Illustrator, Photoshop',
+  type_ru:'Постер',
+  type_en:'Poster',
+  images:['assets/images/p_3.png', 'assets/images/p_4.png']
+},
   { id:20, title:'Парк отдыха Озера', cat:'graphic', catName:'Graphic Design', catName_ru:'Graphic Design', desc_ru:'Логотип для парка «Озера» в трёх стилях. Основной символ - инь‑ян с рыбой (отсылка к рыбалке). Цветовая гамма: голубой, зелёный, белый и серый (трава, вода, горы). В типографику вписала геометку в букву «а» и крючок в букву «з». Третий вариант - волнистые линии, имитирующие холмы и водную гладь. Логотип вписывается в любые природные фактуры', desc_en:'A logo for Ozyora Park presented in three styles. The primary symbol is a yin-yang fish, a nod to the location’s fishing heritage. The palette includes blue, green, white, and gray, representing grass, water, and mountains. The typography integrates a map pin into the letter "a" and a fishhook into the letter "z." The third version features wavy lines mimicking rolling hills and calm water. The design seamlessly adapts to any natural texture.', year:'2022', tools:'Illustrator, Photoshop', type_ru:'Брендинг', type_en:'Branding', images:[
   'assets/images/lo1.png',
   'assets/images/lo2.png',
@@ -356,7 +382,7 @@ thumbnail: 'assets/images/t0.png',
   tools:'Photoshop, Illustrator',
   type_ru:'Пресс-волл',
   type_en:'Press Wall',
-  images:['assets/images/we1.png']
+  images:['assets/images/p_6.jpeg', 'assets/images/we1.png']
 },
 { id: 40,
   title:'Фотографии работ',
@@ -423,7 +449,7 @@ thumbnail: 'assets/images/t0.png',
     'assets/images/go1.png',
     'assets/images/go2.png',
     'assets/images/go3.png'
-  ] }];
+  ] },];
 
 // ID проектов, которые открываются в вертикальном модале (только изображения)
 const VERTICAL_PROJECT_IDS = [0, 1, 2, 3, 4, 5, 18, 19];
