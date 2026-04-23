@@ -1149,7 +1149,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 300px;    /* чтобы не прыгало */
+  min-height: 300px;
 }
 .modal-main-img {
   width: 100%;
@@ -1439,8 +1439,8 @@ iframe {
 .cloud-left {
   left: -240px;
   top: 60%;
-   width: 500px;
-  height: 300px;
+   width: 520px;
+  height: 320px;
   animation: floatLeft 6s ease-in-out infinite;
 }
 .cloud-right {
