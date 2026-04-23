@@ -28,7 +28,7 @@ const PROJECTS = [
   'assets/images/r1.png',
   'assets/images/r2.png',
   'assets/images/r3.png',
-  'https://kinescope.io/embed/fx5L1eZJHNF86J4vePYnFE',   
+  'https://kinescope.io/embed/fx5L1eZJHNF86J4vePYnFE:56.25%',   
   'assets/images/r4.png',
   'assets/images/r5.png',
   'iframe:https://kinescope.io/embed/5jpkQ5C198VLbZAnVq7X6K:56.25%'
@@ -48,7 +48,7 @@ const PROJECTS = [
     'assets/images/s1.png',
     'assets/images/s2.png',
     'assets/images/s3.png',
-     'https://kinescope.io/embed/78Zar6rLUfQ4ZdaDbuPh2f',
+     'https://kinescope.io/embed/78Zar6rLUfQ4ZdaDbuPh2f:55.51%',
     'assets/images/s4.png',
     'assets/images/s5.png',
     'assets/images/s6.png',
