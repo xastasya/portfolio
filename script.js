@@ -499,15 +499,17 @@ function buildProjectsGrid() {
     card.setAttribute('data-project', proj.id);
     const thumbnailSrc = proj.thumbnail ? proj.thumbnail : proj.images[0];
     card.innerHTML = `
-      <div class="proj-img-wrap">
-        <img src="${thumbnailSrc}" alt="${proj.title}" loading="lazy" />
-        <div class="proj-hover">
-          <span class="proj-cat">${currentLang === 'ru' ? proj.catName_ru : proj.catName}</span>
-          <h3 class="proj-name">${proj.title}</h3>
-          <span class="proj-view-icon">→</span>
-        </div>
-      </div>
-    `;
+  <div class="proj-img-wrap">
+    <img src="${thumbnailSrc}" alt="${proj.title}" loading="lazy" />
+    <div class="proj-hand-icon-wrapper">
+      <div class="proj-hand-icon"></div>
+    </div>
+    <div class="proj-hover">
+      <span class="proj-cat">${currentLang === 'ru' ? proj.catName_ru : proj.catName}</span>
+      <h3 class="proj-name">${proj.title}</h3>
+    </div>
+  </div>
+`;
     card.addEventListener('click', (e) => {
       e.stopPropagation();
       openModal(proj.id);
@@ -973,18 +975,6 @@ function initMobileMenu() {
   });
 }
 
-// ---------- ЗУМ В СТАРОМ МОДАЛЕ ----------
-function initModalZoom() {
-  if (!modalMainImg) return;
-  let isZoomed = false;
-  modalMainImg.addEventListener('click', () => {
-    isZoomed = !isZoomed;
-    modalMainImg.style.transform = isZoomed ? 'scale(1.7)' : 'scale(1)';
-    modalMainImg.style.cursor = isZoomed ? 'zoom-out' : 'zoom-in';
-    modalMainImg.style.transition = 'transform 0.3s ease';
-  });
-}
-
 // ---------- ЗАКРЫТИЕ МОДАЛОВ ПО КЛАВИШЕ ESC И СТРЕЛКИ ----------
 function initModalKeyboard() {
   document.addEventListener('keydown', (e) => {
@@ -1052,7 +1042,6 @@ function init() {
   initBackToTop();
   initScrollReveal();
   initMobileMenu();
-  initModalZoom();
   initModalKeyboard();
   bindOldModalEvents();
   bindVerticalModalEvents();
