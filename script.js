@@ -1101,61 +1101,24 @@ if (grid) {
     grid.style.transform = `translate(${x}px, ${y}px)`;
   });
 }
-function animateSkillBars() {
+// Установка ширины полосок навыков (на всех устройствах без анимации для мобильных)
+function setSkillBarsImmediately() {
   const fills = document.querySelectorAll('.sw-fill');
   const isMobile = window.matchMedia('(max-width: 768px)').matches;
-  
   fills.forEach(fill => {
     const targetWidth = fill.getAttribute('data-width');
     if (targetWidth) {
       if (isMobile) {
+        // Мобильные: сразу ширина, без transition
         fill.style.transition = 'none';
         fill.style.width = targetWidth;
-        fill.classList.add('animated');
       } else {
-        if (!fill.classList.contains('animated')) {
-          fill.style.width = '0';
-          setTimeout(() => {
-            fill.style.transition = 'width 3s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-            fill.style.width = targetWidth;
-            fill.classList.add('animated');
-          }, 50);
-        }
+        // Десктоп: можно оставить анимацию или тоже сразу (по желанию)
+        fill.style.width = targetWidth;
       }
     }
   });
 }
 
-// Запускаем анимацию при видимости секции, а также сразу, если секция уже видна (особенно для мобильных)
-const resumeSection = document.querySelector('.resume-section');
-if (resumeSection) {
-  // Проверяем, видна ли секция уже сейчас
-  const rect = resumeSection.getBoundingClientRect();
-  const isVisible = rect.top < window.innerHeight - 100;
-  if (isVisible) {
-    animateSkillBars();
-  } else {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          animateSkillBars();
-          observer.disconnect();
-        }
-      });
-    }, { threshold: 0.2 });
-    observer.observe(resumeSection);
-  }
-}
-function wrapAmpersand(element) {
-  if (!element) return;
-  let html = element.innerHTML;
-  html = html.replace(/ &amp; /g, ' <span class="amp">&amp;</span> ');
-  html = html.replace(/ & /g, ' <span class="amp">&amp;</span> ');
-  element.innerHTML = html;
-}
-document.addEventListener('DOMContentLoaded', function() {
-  const subtitle = document.querySelector('.hero-subtitle');
-  if (subtitle) {
-    wrapAmpersand(subtitle);
-  }
-});
+// Запускаем сразу после загрузки DOM
+document.addEventListener('DOMContentLoaded', setSkillBarsImmediately);
