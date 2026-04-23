@@ -1101,35 +1101,51 @@ if (grid) {
     grid.style.transform = `translate(${x}px, ${y}px)`;
   });
 }
-
-// Плавная анимация полосок навыков
 function animateSkillBars() {
   const fills = document.querySelectorAll('.sw-fill');
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+  
   fills.forEach(fill => {
     const targetWidth = fill.getAttribute('data-width');
-    if (targetWidth && !fill.classList.contains('animated')) {
-      fill.style.width = '0';
-      setTimeout(() => {
+    if (targetWidth) {
+      if (isMobile) {
+        fill.style.transition = 'none';
         fill.style.width = targetWidth;
         fill.classList.add('animated');
-      }, 50);
+      } else {
+        if (!fill.classList.contains('animated')) {
+          fill.style.width = '0';
+          setTimeout(() => {
+            fill.style.transition = 'width 3s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            fill.style.width = targetWidth;
+            fill.classList.add('animated');
+          }, 50);
+        }
+      }
     }
   });
 }
+
+// Запускаем анимацию при видимости секции, а также сразу, если секция уже видна (особенно для мобильных)
 const resumeSection = document.querySelector('.resume-section');
 if (resumeSection) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        animateSkillBars();
-        observer.disconnect();
-      }
-    });
-  }, { threshold: 0.2 });
-  observer.observe(resumeSection);
+  // Проверяем, видна ли секция уже сейчас
+  const rect = resumeSection.getBoundingClientRect();
+  const isVisible = rect.top < window.innerHeight - 100;
+  if (isVisible) {
+    animateSkillBars();
+  } else {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateSkillBars();
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.2 });
+    observer.observe(resumeSection);
+  }
 }
-
-// Оборачиваем & в span.amp
 function wrapAmpersand(element) {
   if (!element) return;
   let html = element.innerHTML;
