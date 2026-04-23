@@ -165,6 +165,18 @@ thumbnail: 'assets/images/t0.png',
   type_en:'Poster',
   images:['assets/images/p_3.png', 'assets/images/p_4.png']
 },
+{ id: 50,
+  title:'Типографический постер',
+  cat:'graphic',
+  catName:'Graphic Design',
+  catName_ru:'Graphic Design',
+  year:'2026',
+  tools:'Illustrator, Photoshop',
+  type_ru:'Постер',
+  type_en:'Poster',
+  thumbnail:'assets/images/tp1.png',
+  images:['assets/images/tp2.png']
+},
   { id:20, title:'Парк отдыха Озера', cat:'graphic', catName:'Graphic Design', catName_ru:'Graphic Design', desc_ru:'Логотип для парка «Озера» в трёх стилях. Основной символ - инь‑ян с рыбой (отсылка к рыбалке). Цветовая гамма: голубой, зелёный, белый и серый (трава, вода, горы). В типографику вписала геометку в букву «а» и крючок в букву «з». Третий вариант - волнистые линии, имитирующие холмы и водную гладь. Логотип вписывается в любые природные фактуры', desc_en:'A logo for Ozyora Park presented in three styles. The primary symbol is a yin-yang fish, a nod to the location’s fishing heritage. The palette includes blue, green, white, and gray, representing grass, water, and mountains. The typography integrates a map pin into the letter "a" and a fishhook into the letter "z." The third version features wavy lines mimicking rolling hills and calm water. The design seamlessly adapts to any natural texture.', year:'2022', tools:'Illustrator, Photoshop', type_ru:'Брендинг', type_en:'Branding', images:[
   'assets/images/lo1.png',
   'assets/images/lo2.png',
@@ -328,12 +340,12 @@ thumbnail: 'assets/images/t0.png',
   tools:'Illustrator, Photoshop',
   type_ru:'Айдентика',
   type_en:'Identity',
-  thumbnail:'assets/images/sh1.png',
   images:[
+    'assets/images/02.png',
+    'assets/images/01.png',
+    'assets/images/03.png',
     'assets/images/sh1.png',
-    'assets/images/sh2.png',
-    'assets/images/sh3.png',
-    'assets/images/sh4.png',
+    'assets/images/sh6.png',
     'assets/images/sh5.png'
   ]
 },
@@ -348,7 +360,7 @@ thumbnail: 'assets/images/t0.png',
   tools:'Illustrator, Photoshop',
   type_ru:'Визитка',
   type_en:'Business Card',
-  images:['assets/images/lu1.png']
+  images:['assets/images/lu2.png', 'assets/images/lu1.png']
 },
 { id: 37,
   title:'Буклет пекарни Жернова',
@@ -361,7 +373,7 @@ thumbnail: 'assets/images/t0.png',
   tools:'Illustrator, Photoshop',
   type_ru:'Буклет',
   type_en:'Brochure',
-  images:['assets/images/zh1.png']
+  images:['assets/images/zh2.png', 'assets/images/zh1.png']
 },
 { id: 38,
   title:'Визитка Дом Дизеля',
@@ -450,7 +462,7 @@ thumbnail: 'assets/images/t0.png',
 ] }];
 
 // ID проектов, которые открываются в вертикальном модале (только изображения)
-const VERTICAL_PROJECT_IDS = [0, 1, 2, 3, 4, 5, 18, 19];
+const VERTICAL_PROJECT_IDS = [0, 1, 2, 3, 4, 5, 18, 19, 50];
 
 // ---------- ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ ----------
 let currentLang = 'ru';
@@ -1032,8 +1044,83 @@ function scrollToActiveThumb() {
   const scrollLeft = activeThumb.offsetLeft - (containerRect.width / 2) + (thumbRect.width / 2);
   container.scrollTo({ left: scrollLeft, behavior: 'smooth' });
 }
+// ==================== АДАПТИВНАЯ АНИМАЦИЯ ПОЛОСОК НАВЫКОВ ====================
+let skillObserver = null;
+let lastMobileState = null;
 
-// ---------- ИНИЦИАЛИЗАЦИЯ ВСЕГО ----------
+function setSkillBarsWidth(instant = false) {
+  const fills = document.querySelectorAll('.sw-fill');
+  if (instant) {
+    fills.forEach(fill => {
+      fill.style.transition = 'none';
+      fill.style.width = fill.getAttribute('data-width') || '0%';
+    });
+  } else {
+    fills.forEach(fill => {
+      fill.style.transition = '';
+      const targetWidth = fill.getAttribute('data-width');
+      if (targetWidth) fill.style.width = targetWidth;
+    });
+  }
+}
+
+function resetSkillBarsWidth() {
+  const fills = document.querySelectorAll('.sw-fill');
+  fills.forEach(fill => {
+    fill.style.transition = '';
+    fill.style.width = '0%';
+  });
+}
+
+function initSkillBars() {
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+  
+  // Если изменился тип устройства (мобила/десктоп) – перезапускаем
+  if (lastMobileState !== null && lastMobileState !== isMobile) {
+    resetSkillBarsWidth();
+    if (skillObserver) skillObserver.disconnect();
+    skillObserver = null;
+  }
+  lastMobileState = isMobile;
+  
+  if (isMobile) {
+    // Мобильные: сразу ставим ширину, без анимации
+    setSkillBarsWidth(true);
+    return;
+  }
+  
+  // Десктоп: анимация при появлении блока
+  resetSkillBarsWidth(); // гарантируем старт с 0
+  
+  const target = document.querySelector('.software-list');
+  if (!target) return;
+  
+  if (skillObserver) skillObserver.disconnect();
+  
+  skillObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        setSkillBarsWidth(false);
+        obs.disconnect();
+        skillObserver = null;
+      }
+    });
+  }, { threshold: 0.3 });
+  
+  skillObserver.observe(target);
+}
+
+function setupSkillBarsWithResize() {
+  initSkillBars();
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      initSkillBars();
+    }, 150);
+  });
+}
+
 function init() {
   buildProjectsGrid();
   initAccordion();
@@ -1046,6 +1133,9 @@ function init() {
   bindOldModalEvents();
   bindVerticalModalEvents();
   initImageFallbacks();
+  
+  // Новая адаптивная анимация полосок
+  setupSkillBarsWithResize();
   
   if (langToggle) {
     langToggle.addEventListener('click', () => {
@@ -1119,6 +1209,3 @@ function setSkillBarsImmediately() {
     }
   });
 }
-
-// Запускаем сразу после загрузки DOM
-document.addEventListener('DOMContentLoaded', setSkillBarsImmediately);
