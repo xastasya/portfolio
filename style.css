@@ -1431,8 +1431,6 @@ iframe {
 }
 .cloud {
   position: fixed;
-  width: 600px;
-  height: 400px;
   background: url('assets/images/cloud.png') no-repeat center/contain;
   pointer-events: none;
   z-index: 5;
@@ -1441,11 +1439,15 @@ iframe {
 .cloud-left {
   left: -240px;
   top: 60%;
+   width: 600px;
+  height: 400px;
   animation: floatLeft 6s ease-in-out infinite;
 }
 .cloud-right {
   right: -240px;
   top: 0%;
+   width: 550px;
+  height: 350px;
   animation: floatRight 6s ease-in-out infinite -3s;
 }
 @keyframes floatLeft {
