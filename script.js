@@ -711,7 +711,6 @@ function closeOldModal() {
 
 // ========== ВЕРТИКАЛЬНЫЙ МОДАЛ (только изображения, подсказка) ==========
 let hintTimeout = null;
-let hintHidden = false;
 
 function openVerticalModal(project) {
   verticalImagesList.innerHTML = '';
@@ -737,7 +736,6 @@ function openVerticalModal(project) {
       wrapper.style.paddingTop = paddingPercent + '%';
       wrapper.style.backgroundColor = '#f4f6f8';
       
-      // Индикатор загрузки (светлый фон)
       const loader = document.createElement('div');
       loader.textContent = 'Загрузка...';
       loader.style.cssText = `
@@ -785,25 +783,34 @@ function openVerticalModal(project) {
   verticalContainer.scrollTop = 0;
   
   if (scrollHint) {
-    scrollHint.style.display = 'flex';
-    hintHidden = false;
-    if (hintTimeout) clearTimeout(hintTimeout);
-    hintTimeout = setTimeout(() => {
-      if (scrollHint && !hintHidden) {
-        scrollHint.style.display = 'none';
-        hintHidden = true;
-      }
-    }, 4000);
-  }
-  
-  const onScroll = () => {
-    if (scrollHint && !hintHidden) {
-      scrollHint.style.display = 'none';
-      hintHidden = true;
-      verticalContainer.removeEventListener('scroll', onScroll);
+    if (hintTimeout) {
+      clearTimeout(hintTimeout);
+      hintTimeout = null;
     }
-  };
-  verticalContainer.addEventListener('scroll', onScroll, { once: true });
+    if (verticalContainer._scrollHintHandler) {
+      verticalContainer.removeEventListener('scroll', verticalContainer._scrollHintHandler);
+    }
+    scrollHint.style.display = 'flex';
+    hintTimeout = setTimeout(() => {
+      if (scrollHint) scrollHint.style.display = 'none';
+      hintTimeout = null;
+    }, 4000);
+    const onScrollHint = () => {
+      if (scrollHint && scrollHint.style.display !== 'none') {
+        scrollHint.style.display = 'none';
+        if (hintTimeout) {
+          clearTimeout(hintTimeout);
+          hintTimeout = null;
+        }
+        verticalContainer.removeEventListener('scroll', onScrollHint);
+        if (verticalContainer._scrollHintHandler === onScrollHint) {
+          delete verticalContainer._scrollHintHandler;
+        }
+      }
+    };
+    verticalContainer._scrollHintHandler = onScrollHint;
+    verticalContainer.addEventListener('scroll', onScrollHint, { once: true });
+  }
   
   updateScrollHintText();
 }
