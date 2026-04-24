@@ -1,6 +1,3 @@
-/* ------------------------------
-   Базовые переменные и сброс
-------------------------------- */
 :root {
   --bg: #E8ECF5;
   --bg-2: #DFE4EF;
@@ -28,53 +25,39 @@
   margin: 0;
   padding: 0;
 }
-
 html {
   scroll-behavior: smooth;
   font-size: 16px;
 }
-
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: system-ui, -apple-system, 'Poppins', sans-serif;
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
 }
-body {
-  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
-}
-
 img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
 a {
   text-decoration: none;
   color: inherit;
 }
-
 button {
   cursor: pointer;
   border: none;
   background: none;
   font: inherit;
 }
-
 ul {
   list-style: none;
 }
-
 input, textarea {
   font: inherit;
 }
-
-/* ------------------------------
-   Утилиты и общие стили
-------------------------------- */
 .section-label {
   display: inline-block;
   font-size: 0.9rem;
@@ -84,25 +67,20 @@ input, textarea {
   color: var(--accent);
   margin-bottom: 8px;
 }
-
 .section-header {
   text-align: center;
   margin-bottom: 48px;
 }
-
 .section-title {
   font-size: clamp(1.8rem, 3vw, 2.6rem);
   font-weight: 700;
   letter-spacing: -0.01em;
   color: var(--text);
 }
-
-/* Анимации появления */
 .fade-up {
   opacity: 0;
   transform: translateY(28px);
-  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .fade-up.visible {
   opacity: 1;
@@ -113,19 +91,15 @@ input, textarea {
 .delay-3 { transition-delay: 0.32s; }
 .delay-4 { transition-delay: 0.44s; }
 .delay-5 { transition-delay: 0.56s; }
-
 .scroll-reveal {
   opacity: 0;
   transform: translateY(36px);
-  transition: opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1), transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .scroll-reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
-
-/* Кнопки */
 .btn {
   font-family: 'Poppins', sans-serif;
   display: inline-flex;
@@ -159,10 +133,6 @@ input, textarea {
   color: var(--accent);
   transform: translateY(-2px);
 }
-
-/* ------------------------------
-   Плавающая навигация
-------------------------------- */
 .floating-nav {
   position: fixed;
   top: 20px;
@@ -198,7 +168,6 @@ input, textarea {
   transition: all 0.3s ease;
   margin-top: 1px;
 }
-
 .logo-svg {
   width: 21px;
   height: 21px;
@@ -206,11 +175,9 @@ input, textarea {
   transition: color 0.3s ease;
   margin-top: -2px;
 }
-
 .nav-logo-link:hover .logo-mark {
   background: #DDE1E9;
 }
-
 .nav-logo-link:hover .logo-svg {
   color: var(--accent);
 }
@@ -318,41 +285,32 @@ input, textarea {
   background: rgba(123, 97, 255, 0.12);
   color: var(--accent);
 }
-
-/* ------------------------------
-   Hero секция (десктоп + планшет + мобильные)
-------------------------------- */
 .hero {
   position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 0 24px;
+  padding-top: 230px;
   overflow-x: clip;
   isolation: isolate;
 }
-
 .hero-bg-grid {
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(rgba(123, 97, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(123, 97, 255, 0.04) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(123, 97, 255, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(123, 97, 255, 0.04) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 100%);
   pointer-events: none;
   z-index: 0;
 }
-
 .hero-eyebrow-wrap {
   position: relative;
   z-index: 10;
   text-align: center;
-  margin-bottom: -1.5rem; 
+  margin-bottom: -1.5rem;
   pointer-events: none;
 }
-
 .hero-eyebrow {
   font-size: 0.85rem;
   font-weight: 700;
@@ -361,7 +319,6 @@ input, textarea {
   color: var(--text-3);
   margin: 0;
 }
-
 .hero-spline-wrap {
   position: relative;
   z-index: 5;
@@ -372,8 +329,21 @@ input, textarea {
   aspect-ratio: 600 / 480;
   overflow: visible;
 }
-
+.spline-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('assets/images/pr1.png') no-repeat center center;
+  background-size: cover;
+  border-radius: 24px;
+  z-index: 1;
+  transition: opacity 0.5s ease;
+}
 .hero-spline-wrap spline-viewer {
+  position: relative;
+  z-index: 2;
   display: block;
   background: transparent !important;
   pointer-events: auto;
@@ -381,11 +351,14 @@ input, textarea {
   width: 100% !important;
   height: 100% !important;
 }
-
 spline-viewer::part(logo) {
   display: none;
 }
-
+.hero-spline-wrap spline-viewer.loaded + .spline-placeholder,
+.hero-spline-wrap spline-viewer:not([loading]) + .spline-placeholder {
+  opacity: 0;
+  pointer-events: none;
+}
 .hero-content {
   position: relative;
   z-index: 10;
@@ -396,7 +369,6 @@ spline-viewer::part(logo) {
   pointer-events: none;
   background: transparent;
 }
-
 .hero-subtitle {
   font-family: 'Poppins', sans-serif;
   font-size: clamp(1.3rem, 3.5vw, 1.8rem);
@@ -406,7 +378,6 @@ spline-viewer::part(logo) {
   margin-bottom: 1rem;
   margin-top: 0;
 }
-
 .hero-desc {
   font-size: 1.05rem;
   color: var(--text-3);
@@ -414,7 +385,6 @@ spline-viewer::part(logo) {
   margin: 0 auto 1.5rem;
   line-height: 1.7;
 }
-
 .hero-cta {
   display: flex;
   gap: 14px;
@@ -423,7 +393,6 @@ spline-viewer::part(logo) {
   margin-bottom: 0;
   margin-top: 1.5rem;
 }
-
 .hero-content .hero-cta,
 .hero-content .btn,
 .hero-content a {
@@ -431,11 +400,9 @@ spline-viewer::part(logo) {
   position: relative;
   z-index: 20;
 }
-
 .hero-content *:not(.btn):not(.hero-cta):not(a) {
   pointer-events: none;
 }
-
 .hero-scroll {
   position: absolute;
   bottom: 40px;
@@ -452,20 +419,16 @@ spline-viewer::part(logo) {
   text-transform: uppercase;
   color: var(--text-3);
 }
-
 .scroll-line {
   width: 1px;
   height: 48px;
   background: linear-gradient(to bottom, var(--accent), transparent);
   animation: scrollPulse 2s ease-in-out infinite;
 }
-
 @keyframes scrollPulse {
   0%, 100% { opacity: 0.4; transform: scaleY(1); }
   50% { opacity: 1; transform: scaleY(1.1); }
 }
-
-/* Планшетная версия (не тронута, идеальная) */
 @media (min-width: 768px) and (max-width: 1024px) {
   .hero {
     justify-content: flex-start;
@@ -488,11 +451,10 @@ spline-viewer::part(logo) {
     margin-top: 0;
   }
 }
-
 @media (max-width: 767px) {
   .hero {
     justify-content: flex-start;
-    padding-top: 155px;
+    padding-top: 150px;
   }
   .hero-eyebrow-wrap {
     margin-top: -1rem;
@@ -502,7 +464,7 @@ spline-viewer::part(logo) {
   }
   .hero-spline-wrap {
     max-width: 400px;
-    margin: -1.5rem auto -2rem;
+    margin: -1.5rem auto -3.2rem;
   }
   .hero-content {
     margin-top: 0.02rem;
@@ -517,16 +479,11 @@ spline-viewer::part(logo) {
     margin-top: 0.02rem;
   }
 }
-/* ------------------------------
-   Секции общие
-------------------------------- */
 section {
   max-width: var(--site-max);
   margin: 0 auto;
   padding: 100px 24px;
 }
-
-/* Аккордеон (избранные проекты) */
 .accordion-gallery {
   display: flex;
   gap: 12px;
@@ -542,6 +499,7 @@ section {
   cursor: pointer;
   transition: flex 0.65s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  will-change: transform;
 }
 .acc-item:hover {
   flex: 4;
@@ -592,8 +550,6 @@ section {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
-/* Категории проектов */
 .category-tabs {
   display: flex;
   gap: 8px;
@@ -633,6 +589,7 @@ section {
   cursor: pointer;
   aspect-ratio: 4/3;
   transition: var(--transition);
+  will-change: transform;
 }
 .proj-card:hover {
   transform: translateY(-4px);
@@ -686,8 +643,6 @@ section {
 .proj-card.hidden {
   display: none;
 }
-
-/* Резюме */
 .resume-layout {
   display: grid;
   grid-template-columns: 280px 1fr;
@@ -702,6 +657,7 @@ section {
   position: relative;
   margin-bottom: 24px;
   border-radius: var(--radius);
+  animation: avatarPulse 2.5s infinite ease-in-out;
 }
 .resume-photo {
   width: 100%;
@@ -815,7 +771,7 @@ section {
   background: linear-gradient(90deg, var(--accent), var(--accent-h));
   border-radius: 2px;
   width: 0;
-  transition: width 3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: width 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .lang-list {
   display: flex;
@@ -920,6 +876,7 @@ section {
   padding: 16px 20px;
   border: 1.5px solid transparent;
   transition: var(--transition);
+  will-change: transform;
 }
 .timeline-item:hover .timeline-content {
   border-color: rgba(123, 97, 255, 0.22);
@@ -961,8 +918,6 @@ section {
   color: var(--text-2);
   line-height: 1.6;
 }
-
-/* Социальные сети */
 .socials-row {
   display: flex;
   gap: 14px;
@@ -983,6 +938,7 @@ section {
   gap: 6px;
   transition: var(--transition);
   text-align: center;
+  will-change: transform;
 }
 .social-card:hover {
   border-color: var(--accent);
@@ -1015,8 +971,6 @@ section {
   font-size: 0.8rem;
   color: var(--text-3);
 }
-
-/* Контактная форма */
 .contact-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1116,8 +1070,6 @@ section {
 .form-success.show {
   display: block;
 }
-
-/* Футер */
 .site-footer {
   border-top: 1px solid var(--border);
   padding: 28px 24px;
@@ -1140,10 +1092,6 @@ section {
   font-size: 0.85rem;
   color: var(--text-3);
 }
-
-/* ------------------------------
-   Модальные окна
-------------------------------- */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -1175,6 +1123,7 @@ section {
   position: relative;
   display: flex;
   flex-direction: column;
+  will-change: transform, opacity;
 }
 .modal-overlay.open .modal-box {
   transform: translateY(0) scale(1);
@@ -1226,7 +1175,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 300px;    /* чтобы не прыгало */
+  min-height: 300px;
 }
 .modal-main-img {
   width: 100%;
@@ -1270,11 +1219,11 @@ section {
   padding: 12px 16px;
   background: var(--bg-2);
   overflow-x: auto;
-  scrollbar-width: none;    /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 .modal-thumbs::-webkit-scrollbar {
-  display: none;            /* Chrome/Safari */
+  display: none;
 }
 .modal-thumb {
   width: 160px;
@@ -1349,8 +1298,6 @@ section {
   font-weight: 600;
   color: var(--text);
 }
-
-/* Вертикальный модал */
 .vertical-modal .modal-box {
   max-width: 1400px;
   width: 90vw;
@@ -1463,9 +1410,6 @@ section {
 .vertical-modal-container::-webkit-scrollbar-thumb:hover {
   background: var(--accent-h);
 }
-/* ------------------------------
-   Элементы: iframe, облака, курсор
-------------------------------- */
 iframe {
   border: none;
   outline: none;
@@ -1573,6 +1517,7 @@ iframe {
   pointer-events: none;
   transform: translateY(12px);
   transition: var(--transition);
+  will-change: transform, opacity;
 }
 .back-to-top.visible {
   opacity: 1;
@@ -1583,11 +1528,6 @@ iframe {
   background: var(--accent-h);
   transform: translateY(-3px);
 }
-
-/* ------------------------------
-   Старая адаптивность для всего сайта (кроме hero)
-------------------------------- */
-
 @media (max-width: 992px) {
   .resume-layout {
     grid-template-columns: 1fr;
@@ -1600,12 +1540,24 @@ iframe {
     grid-template-columns: 1fr;
     gap: 40px;
   }
-}
-
-/* Мобильные устройства (до 768px) */
-@media (max-width: 768px) {
+  .resume-photo-wrap {
+    max-width: 220px;
+    margin: 0 auto 24px;
+  }
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 150px;
+  }
+  .hero-spline-wrap {
+    max-width: 400px;
+    margin: -1.5rem auto -3.2rem;
+  }
+  .hero-content {
+    margin-top: 0.02rem;
   }
   .accordion-gallery {
     height: 280px;
@@ -1615,65 +1567,23 @@ iframe {
     font-size: 0.82rem;
   }
   .cloud {
-    width: 300px;
-    height: 200px;
-    opacity: 0.5;
+    display: none;
   }
-  .cloud-left {
-    left: -120px;
-    top: 80%;
+  .cursor-glow {
+    display: none;
   }
-  .cloud-right {
-    right: -120px;
-    top: 5%;
+  .hero-bg-grid {
+    background-size: 32px 32px;
   }
   section {
     padding: 70px 18px;
   }
-  .vertical-modal .modal-box {
-    width: 95vw;
+  .fade-up, .scroll-reveal {
+    transition-duration: 0.3s;
   }
-}
-
-/* Гамбургер-меню для маленьких экранов (до 720px) */
-@media (max-width: 720px) {
-  .floating-nav {
-    padding: 8px 12px;
-    justify-content: space-between;
+  .acc-item, .acc-img-wrap img, .proj-card, .proj-img-wrap img {
+    transition-duration: 0.2s;
   }
-  .nav-links {
-    display: none;
-  }
-  .nav-hamburger {
-    display: flex;
-    margin-left: 0;
-  }
-}
-.resume-photo-wrap {
-  animation: avatarPulse 2.5s infinite ease-in-out;
-  border-radius: var(--radius);
-}
-
-@keyframes avatarPulse {
-  0% { box-shadow: 0 0 0 0 var(--accent-glow); }
-  70% { box-shadow: 0 0 0 12px rgba(123, 97, 255, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(123, 97, 255, 0); }
-}
-@media (max-width: 992px) {
-  .resume-photo-wrap {
-    max-width: 220px;
-    margin: 0 auto 24px;
-  }
-}
-@media (max-width: 480px) {
-  .resume-photo-wrap {
-    max-width: 160px;
-  }
-}
-/* ===== Модальные окна — адаптация под мобильные ===== */
-
-/* Для всех модальных окон (горизонтальных и вертикальных) */
-@media (max-width: 768px) {
   .modal-overlay {
     padding: 16px;
     align-items: flex-start;
@@ -1686,16 +1596,29 @@ iframe {
   }
   .modal-content {
     flex-direction: column;
+    height: auto;
+    overflow-y: visible;
   }
   .modal-gallery {
-    min-height: 40vh;
+    flex: 0 0 auto;
+    max-height: none;
+    min-height: auto;
+  }
+  .modal-main-img-wrap {
+    max-height: 45vh;
+    min-height: 200px;
+  }
+  .modal-thumbs {
+    flex-shrink: 0;
+    overflow-x: auto;
   }
   .modal-sidebar {
     width: 100%;
     border-left: none;
     border-top: 1px solid var(--border);
-    max-height: 35vh;
+    max-height: 40vh;
     overflow-y: auto;
+    flex-shrink: 1;
   }
   .modal-sidebar-inner {
     padding: 20px;
@@ -1708,10 +1631,6 @@ iframe {
     width: 32px;
     height: 32px;
   }
-}
-
-/* Вертикальный модал (для проектов с вертикальной прокруткой) */
-@media (max-width: 768px) {
   .vertical-modal .modal-box {
     width: 95vw;
     max-height: 90vh;
@@ -1733,9 +1652,28 @@ iframe {
     height: 38px;
   }
 }
-
-/* Для совсем маленьких экранов (до 480px) */
+@media (max-width: 720px) {
+  .floating-nav {
+    padding: 8px 12px;
+    justify-content: space-between;
+  }
+  .nav-links {
+    display: none;
+  }
+  .nav-hamburger {
+    display: flex;
+    margin-left: 0;
+  }
+}
+@media (max-width: 640px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
 @media (max-width: 480px) {
+  .resume-photo-wrap {
+    max-width: 160px;
+  }
   .modal-overlay {
     padding: 8px;
   }
@@ -1769,7 +1707,6 @@ iframe {
   pointer-events: none;
   transition: transform 0.2s ease;
 }
-
 .proj-hand-icon {
   width: 20px;
   height: 20px;
@@ -1777,13 +1714,16 @@ iframe {
   background-size: contain;
   animation: handWave 1.2s ease-in-out infinite;
 }
-
 @keyframes handWave {
   0%, 100% { transform: rotate(0deg); }
   25% { transform: rotate(12deg); }
   75% { transform: rotate(-8deg); }
 }
-
 .proj-card:hover .proj-hand-icon-wrapper {
   transform: scale(1.1);
+}
+@keyframes avatarPulse {
+  0% { box-shadow: 0 0 0 0 var(--accent-glow); }
+  70% { box-shadow: 0 0 0 12px rgba(123, 97, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(123, 97, 255, 0); }
 }
