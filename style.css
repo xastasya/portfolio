@@ -492,7 +492,7 @@ spline-viewer::part(logo) {
 @media (max-width: 767px) {
   .hero {
     justify-content: flex-start;
-    padding-top: 250px;
+    padding-top: 180px;
   }
   .hero-eyebrow-wrap {
     margin-top: -1rem;
