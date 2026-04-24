@@ -1581,6 +1581,9 @@ iframe {
     height: 280px;
     gap: 6px;
   }
+  .hero-desc {
+    font-size: 0.95rem;
+  }
   .acc-title {
     font-size: 0.82rem;
   }
