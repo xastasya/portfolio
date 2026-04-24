@@ -819,6 +819,7 @@ function closeVerticalModal() {
   verticalModal.classList.remove('open');
   document.body.style.overflow = '';
   if (hintTimeout) clearTimeout(hintTimeout);
+  if (scrollHint) scrollHint.style.display = 'none';
 }
 
 function updateScrollHintText() {

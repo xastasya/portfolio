@@ -1348,15 +1348,15 @@ section {
 }
 .scroll-hint {
   position: fixed;
-  bottom: 80px;           /* Поднимаем выше (было 32px) */
+  bottom: 80px;      
   left: 50%;
   transform: translateX(-50%);
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(8px);
-  padding: 6px 14px;      /* Уменьшаем отступы */
+  padding: 6px 14px;    
   border-radius: 40px;
   color: white;
-  font-size: 0.75rem;     /* Меньше шрифт */
+  font-size: 0.75rem;  
   font-weight: 500;
   display: flex;
   align-items: center;
@@ -1370,8 +1370,8 @@ section {
 }
 
 .mouse-wheel {
-  width: 20px;            /* Было 28px */
-  height: 32px;           /* Было 44px */
+  width: 20px;          
+  height: 32px;        
   border: 2px solid white;
   border-radius: 20px;
   position: relative;
@@ -1380,14 +1380,30 @@ section {
 .mouse-wheel::after {
   content: '';
   position: absolute;
-  top: 6px;              /* Сдвигаем вверх внутри колесика */
+  top: 6px;            
   left: 50%;
   transform: translateX(-50%);
   width: 3px;
-  height: 6px;           /* Уменьшаем бегунок */
+  height: 6px;          
   background: white;
   border-radius: 2px;
   animation: wheelScroll 1.5s infinite;
+}
+@media (max-width: 768px) {
+  .scroll-hint {
+    bottom: 70px;
+    padding: 4px 12px;
+    font-size: 0.7rem;
+  }
+  .mouse-wheel {
+    width: 18px;
+    height: 28px;
+  }
+  .mouse-wheel::after {
+    width: 2px;
+    height: 5px;
+    top: 5px;
+  }
 }
 @keyframes wheelScroll {
   0% { opacity: 1; transform: translateX(-50%) translateY(0); }
