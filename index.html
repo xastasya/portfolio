@@ -54,24 +54,28 @@
 
 <section class="hero" id="hero">
   <div class="hero-bg-grid"></div>
-  <div class="hero-inner">
+
+  <!-- 1. Верхний текст: Портфолио · 2026 -->
+  <div class="hero-eyebrow-wrap">
     <p class="hero-eyebrow fade-up" data-ru="Портфолио · 2026" data-en="Portfolio · 2026">Портфолио · 2026</p>
-    <h1 class="hero-title fade-up delay-1" data-ru="Astasya" data-en="Astasya">Astasya</h1>
-    <p class="hero-subtitle fade-up delay-2" data-ru="Дизайнер &amp; CG Художник" data-en="Designer &amp; CG Artist">Designer &amp; CG Artist</p>
-    <p class="hero-desc fade-up delay-3" data-ru="Превращаю идеи в вдохновляющий визуал.
-    Графический дизайн, 3D, Брендинг и UI" data-en="I turn ideas into expressive visuals that inspire.
-    Graphic design, 3D, branding, and UI">Превращаю идеи в вдохновляющий визуал. 
-    Графический дизайн, 3D, Брендинг и UI</p>
+  </div>
+
+  <!-- 2. Сплайн (3D-модель) -->
+  <div class="hero-spline-wrap">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.88/build/spline-viewer.js"></script>
+<spline-viewer url="https://prod.spline.design/6NbD0W-Uin9R7WJt/scene.splinecode"></spline-viewer>
+  </div>
+
+  <!-- 3. Нижний текст и кнопки -->
+  <div class="hero-content">
+    <p class="hero-subtitle fade-up delay-2" data-ru="Дизайнер &amp; CG Художник" data-en="Designer &amp; CG Artist">Дизайнер &amp; CG Художник</p>
+    <p class="hero-desc fade-up delay-3" data-ru="Превращаю идеи в вдохновляющий визуал. Графический дизайн, 3D, Брендинг и UI" data-en="I turn ideas into expressive visuals that inspire. Graphic design, 3D, branding, and UI">Превращаю идеи в вдохновляющий визуал. Графический дизайн, 3D, Брендинг и UI</p>
     <div class="hero-cta fade-up delay-4">
       <a href="#projects" class="btn btn-primary" data-ru="Смотреть работы" data-en="View Projects">Смотреть работы</a>
       <a href="#contact" class="btn btn-outline" data-ru="Связаться" data-en="Contact">Связаться</a>
     </div>
-    <div class="hero-spline-wrap">
-      <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.81/build/spline-viewer.js"></script>
-      <spline-viewer url="https://prod.spline.design/Pgl3ifmazyeQUhgu/scene.splinecode"></spline-viewer>
-    </div>
   </div>
-  <!-- Убираем fade-up delay-5, чтобы не было конфликта transform -->
+
   <div class="hero-scroll">
     <div class="scroll-line"></div>
     <span data-ru="Листать" data-en="Scroll">Листать</span>

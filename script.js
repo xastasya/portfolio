@@ -955,24 +955,6 @@ function initScrollReveal() {
   }, 100);
 }
 
-// ---------- ФОРМА ОБРАТНОЙ СВЯЗИ ----------
-function initForm() {
-  if (!contactForm) return;
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const btn = contactForm.querySelector('.btn-send');
-    if (btn) btn.style.opacity = '0.6';
-    setTimeout(() => {
-      contactForm.reset();
-      if (formSuccess) formSuccess.classList.add('show');
-      if (btn) btn.style.opacity = '';
-      setTimeout(() => {
-        if (formSuccess) formSuccess.classList.remove('show');
-      }, 4000);
-    }, 800);
-  });
-}
-
 // ---------- МОБИЛЬНОЕ МЕНЮ ----------
 function initMobileMenu() {
   if (!navHamburger || !mobileMenu) return;
