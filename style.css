@@ -1348,19 +1348,19 @@ section {
 }
 .scroll-hint {
   position: fixed;
-  bottom: 32px;
+  bottom: 80px;           /* Поднимаем выше (было 32px) */
   left: 50%;
   transform: translateX(-50%);
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(8px);
-  padding: 8px 18px;
-  border-radius: 60px;
+  padding: 6px 14px;      /* Уменьшаем отступы */
+  border-radius: 40px;
   color: white;
-  font-size: 0.9rem;
+  font-size: 0.75rem;     /* Меньше шрифт */
   font-weight: 500;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   z-index: 2100;
   pointer-events: none;
   white-space: nowrap;
@@ -1368,21 +1368,23 @@ section {
   letter-spacing: 1px;
   animation: fadeUpDown 2s infinite ease-in-out;
 }
+
 .mouse-wheel {
-  width: 28px;
-  height: 44px;
+  width: 20px;            /* Было 28px */
+  height: 32px;           /* Было 44px */
   border: 2px solid white;
   border-radius: 20px;
   position: relative;
 }
+
 .mouse-wheel::after {
   content: '';
   position: absolute;
-  top: 8px;
+  top: 6px;              /* Сдвигаем вверх внутри колесика */
   left: 50%;
   transform: translateX(-50%);
-  width: 4px;
-  height: 8px;
+  width: 3px;
+  height: 6px;           /* Уменьшаем бегунок */
   background: white;
   border-radius: 2px;
   animation: wheelScroll 1.5s infinite;
