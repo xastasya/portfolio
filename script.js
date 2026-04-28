@@ -164,7 +164,7 @@ thumbnail: 'assets/images/t0.png',
   tools:'Illustrator, Photoshop',
   type_ru:'Постер',
   type_en:'Poster',
-  images:['assets/images/p_3.png', 'assets/images/p_4.png']
+  images:['assets/images/p_7.png', 'assets/images/p_3.png', 'assets/images/p_4.png']
 },
 { id: 50,
   title:'Типографический постер',
