@@ -61,15 +61,19 @@ thumbnail: 'assets/images/t0.png',
   'assets/images/t3.png',
   'assets/images/t4.png'
 ] },
-   { id:53, title:'Презентация картины', cat:'graphic', catName:'Graphic Design', catName_ru:'Graphic Design', desc_ru:'cat:'graphic', catName:'Graphic Design', catName_ru:'Graphic Design', desc_en:'cat:'graphic', catName:'Graphic Design', catName_ru:'Graphic Design', year:'2026', tools:'Figma', type_ru:'Брендинг', type_en:'Branding', 
-thumbnail: 'assets/images/ps1.png',
+   { id:53, title:'Презентация картины', cat:'graphic', catName:'Graphic Design', catName_ru:'Graphic Design', 
+  desc_ru:'Презентация художественной работы, выполненной в Figma.', 
+  desc_en:'Presentation of an artwork created in Figma.', 
+  year:'2026', tools:'Figma', type_ru:'Брендинг', type_en:'Branding', 
+  thumbnail: 'assets/images/ps1.png',
   images:[
-  'assets/images/ps1.png',
-  'assets/images/ps2.png',
-  'assets/images/ps3.png',
-  'assets/images/ps4.png',
-  'assets/images/ps5.png'
-] },
+    'assets/images/ps1.png',
+    'assets/images/ps2.png',
+    'assets/images/ps3.png',
+    'assets/images/ps4.png',
+    'assets/images/ps5.png'
+  ]
+},
 { id:6, title:'Оформление Astro Girl', cat:'stream', catName:'Stream Design', catName_ru:'Стрим Дизайн', desc_ru:'Футуристичное оформление с использованием высококонтрастной палитры. Включает баннеры «Offline» и баннер профиля. Индустриальные шрифты и детализированная 3D-маска. Выглядит технологично и сразу задает агрессивный игровой тон подкастов.', desc_en:'Futuristic branding with a high-contrast palette. Includes "Offline" and profile banners. Industrial fonts and a detailed 3D mask. It looks high-tech and immediately sets a bold, aggressive gaming tone for podcasts.', year:'2024', tools:'Photoshop, Illustrator', type_ru:'Брендинг', type_en:'Branding', images:['assets/images/st1.png'] },
 { id:7, title:'Оформление Insomniea', cat:'stream', catName:'Stream Design', catName_ru:'Стрим Дизайн', desc_ru:'Мягкий минимализм в сине-голубой гамме с градиентными переходами. Набор включает главный баннер, иконки соцсетей и функциональные кнопки для донатов. Лаконичный логотип и дружелюбный 3D-аватар создают спокойную атмосферу для зрителей.', desc_en:'Soft minimalism featuring a blue-to-cyan gradient palette. The asset kit includes a main banner, social media icons, and functional buttons for donations. A clean, minimalist logo and a friendly 3D avatar create a calm and welcoming atmosphere for the audience.', year:'2024', tools:'Photoshop, Illustrator', type_ru:'Брендинг', type_en:'Branding', images:['assets/images/st2.png'] },
 { id:8, title:'Оформление 4EYZ', cat:'stream', catName:'Stream Design', catName_ru:'Стрим Дизайн', desc_ru:'Динамичный дизайн, вдохновленный культурой стрит-арта и ручными скетчами. Комплексное оформление состоит из баннеров и набора кнопок («Обо мне», «Правила») со стилизованными иконками. Текстуры граффити и яркие оранжевые акценты придают каналу энергичный вид. Канал посвещен культуре граффити и скейтбординга 2000х.', desc_en:'Stream branding for 4EYZ. A dynamic design inspired by street art culture and hand-drawn sketches. This comprehensive kit includes banners and a set of custom buttons ("About Me," "Rules") with stylized icons. Graffiti textures and bold orange accents give the channel an energetic look. The content is dedicated to the 2000s graffiti and skateboarding scene.', year:'2024', tools:'Photoshop, Illustrator', type_ru:'Брендинг', type_en:'Branding', images:['assets/images/st3.png'] },
