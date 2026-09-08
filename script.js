@@ -61,7 +61,7 @@ thumbnail: 'assets/images/t0.png',
   'assets/images/t3.png',
   'assets/images/t4.png'
 ] },
-   { id:53, title:'Презентация картины', cat:'graphic', catName:'Graphic Design', catName_ru:'Graphic Design', desc_ru:'Стрим', desc_en:'Stream', year:'2025', tools:'Figma', type_ru:'Брендинг', type_en:'Branding', 
+   { id:53, title:'Презентация картины', cat:'graphic', catName:'Graphic Design', catName_ru:'Graphic Design', desc_ru:'cat:'graphic', catName:'Graphic Design', catName_ru:'Graphic Design'', desc_en:'cat:'graphic', catName:'Graphic Design', catName_ru:'Graphic Design'', year:'2026', tools:'Figma', type_ru:'Брендинг', type_en:'Branding', 
 thumbnail: 'assets/images/t0.png',
   images:[
   'assets/images/ps1.png',
