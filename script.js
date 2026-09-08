@@ -1,3 +1,8 @@
+ 
+‎script.js‎
++1-1Lines changed: 1 addition & 1 deletion
+Original file line number	Diff line number	Diff line change
+@@ -1,1202 +1,1202 @@
 /* ============================================================
    ASTASYA PORTFOLIO — script.js
    ============================================================ */
@@ -164,6 +169,7 @@ thumbnail: 'assets/images/t0.png',
   tools:'Illustrator, Photoshop',
   type_ru:'Постер',
   type_en:'Poster',
+  images:['assets/images/p_3.png', 'assets/images/p_4.png']
   images:['assets/images/p_7.png', 'assets/images/p_3.png', 'assets/images/p_4.png']
 },
 { id: 50,
@@ -563,11 +569,11 @@ function openModal(projectId) {
 function openOldModal(project) {
   currentOldProject = project;
   currentOldImageIndex = 0;
-  
+
   modalCat.innerText = currentLang === 'ru' ? project.catName_ru : project.catName;
   modalTitle.innerText = project.title;
   modalDesc.innerText = currentLang === 'ru' ? project.desc_ru : project.desc_en;
-  
+
   const yearLabel = currentLang === 'ru' ? 'Год' : 'Year';
   const typeLabel = currentLang === 'ru' ? 'Тип' : 'Type';
   const toolsLabel = currentLang === 'ru' ? 'Инструменты' : 'Tools';
@@ -576,10 +582,10 @@ function openOldModal(project) {
     <div class="modal-meta-item"><span class="modal-meta-label">${typeLabel}</span><span class="modal-meta-value">${currentLang === 'ru' ? project.type_ru : project.type_en}</span></div>
     <div class="modal-meta-item"><span class="modal-meta-label">${toolsLabel}</span><span class="modal-meta-value">${project.tools}</span></div>
   `;
-  
+
   renderOldModalImage();
   renderOldModalThumbs();
-  
+
   oldModal.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -717,25 +723,25 @@ function openVerticalModal(project) {
   project.images.forEach((src, idx) => {
     const imgWrap = document.createElement('div');
     imgWrap.className = 'vertical-img-item';
-    
+
     if (typeof src === 'string' && src.startsWith('iframe:')) {
       let iframeSrc = src.slice(7);
       iframeSrc = iframeSrc.replace(/:\d+(?:\.\d+)?%$/, '');
-      
+
       let width = 1440, height = 600;
       const widthMatch = iframeSrc.match(/[?&]width=(\d+)/i);
       const heightMatch = iframeSrc.match(/[?&]height=(\d+)/i);
       if (widthMatch) width = parseInt(widthMatch[1]);
       if (heightMatch) height = parseInt(heightMatch[1]);
-      
+
       const paddingPercent = (height / width * 100).toFixed(3);
-      
+
       const wrapper = document.createElement('div');
       wrapper.style.position = 'relative';
       wrapper.style.width = '100%';
       wrapper.style.paddingTop = paddingPercent + '%';
       wrapper.style.backgroundColor = '#f4f6f8';
-      
+
       const loader = document.createElement('div');
       loader.textContent = 'Загрузка...';
       loader.style.cssText = `
@@ -746,7 +752,7 @@ function openVerticalModal(project) {
         font-size: 1rem; font-weight: 500; z-index: 2;
         pointer-events: none; font-family: monospace;
       `;
-      
+
       const iframe = document.createElement('iframe');
       iframe.src = iframeSrc;
       iframe.allow = 'autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;';
@@ -758,12 +764,12 @@ function openVerticalModal(project) {
       iframe.style.width = '100%';
       iframe.style.height = '100%';
       iframe.style.border = 'none';
-      
+
       iframe.addEventListener('load', () => {
         loader.style.opacity = '0';
         setTimeout(() => loader.remove(), 300);
       });
-      
+
       wrapper.appendChild(loader);
       wrapper.appendChild(iframe);
       imgWrap.appendChild(wrapper);
@@ -774,14 +780,14 @@ function openVerticalModal(project) {
       img.loading = 'lazy';
       imgWrap.appendChild(img);
     }
-    
+
     verticalImagesList.appendChild(imgWrap);
   });
-  
+
   verticalModal.classList.add('open');
   document.body.style.overflow = 'hidden';
   verticalContainer.scrollTop = 0;
-  
+
   if (scrollHint) {
     if (hintTimeout) {
       clearTimeout(hintTimeout);
@@ -811,7 +817,7 @@ function openVerticalModal(project) {
     verticalContainer._scrollHintHandler = onScrollHint;
     verticalContainer.addEventListener('scroll', onScrollHint, { once: true });
   }
-  
+
   updateScrollHintText();
 }
 
@@ -834,7 +840,7 @@ function updateScrollHintText() {
 function applyLanguage(lang) {
   currentLang = lang;
   if (langCurrent) langCurrent.textContent = lang.toUpperCase();
-  
+
   document.querySelectorAll('[data-ru][data-en]').forEach(el => {
     const val = el.getAttribute(`data-${lang}`);
     if (val !== null) {
@@ -845,7 +851,7 @@ function applyLanguage(lang) {
       }
     }
   });
-  
+
   document.querySelectorAll('.proj-card').forEach((card, idx) => {
     const proj = PROJECTS[idx];
     if (proj) {
@@ -855,7 +861,7 @@ function applyLanguage(lang) {
       }
     }
   });
-  
+
   if (oldModal && oldModal.classList.contains('open') && currentOldProject) {
     modalCat.innerText = lang === 'ru' ? currentOldProject.catName_ru : currentOldProject.catName;
     modalDesc.innerText = lang === 'ru' ? currentOldProject.desc_ru : currentOldProject.desc_en;
@@ -868,7 +874,7 @@ function applyLanguage(lang) {
       <div class="modal-meta-item"><span class="modal-meta-label">${toolsLabel}</span><span class="modal-meta-value">${currentOldProject.tools}</span></div>
     `;
   }
-  
+
   updateScrollHintText();
 }
 
@@ -1065,7 +1071,7 @@ function resetSkillBarsWidth() {
 
 function initSkillBars() {
   const isMobile = window.matchMedia('(max-width: 768px)').matches;
-  
+
   // Если изменился тип устройства (мобила/десктоп) – перезапускаем
   if (lastMobileState !== null && lastMobileState !== isMobile) {
     resetSkillBarsWidth();
@@ -1073,21 +1079,21 @@ function initSkillBars() {
     skillObserver = null;
   }
   lastMobileState = isMobile;
-  
+
   if (isMobile) {
     // Мобильные: сразу ставим ширину, без анимации
     setSkillBarsWidth(true);
     return;
   }
-  
+
   // Десктоп: анимация при появлении блока
   resetSkillBarsWidth(); // гарантируем старт с 0
-  
+
   const target = document.querySelector('.software-list');
   if (!target) return;
-  
+
   if (skillObserver) skillObserver.disconnect();
-  
+
   skillObserver = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -1097,7 +1103,7 @@ function initSkillBars() {
       }
     });
   }, { threshold: 0.3 });
-  
+
   skillObserver.observe(target);
 }
 
@@ -1124,16 +1130,16 @@ function init() {
   bindOldModalEvents();
   bindVerticalModalEvents();
   initImageFallbacks();
-  
+
   // Новая адаптивная анимация полосок
   setupSkillBarsWithResize();
-  
+
   if (langToggle) {
     langToggle.addEventListener('click', () => {
       applyLanguage(currentLang === 'ru' ? 'en' : 'ru');
     });
   }
-  
+
   applyLanguage('ru');
 }
 
