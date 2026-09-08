@@ -70,7 +70,7 @@ thumbnail: 'assets/images/t0.png',
   'assets/images/b2.png',
   'assets/images/b3.png',
   'assets/images/b4.png',
-  'assets/images/b5.png',
+  'assets/images/b5.png'
 ] },
   { id:10, title:'Револьвер охотника', cat:'3d', catName:'3D', catName_ru:'3D', desc_ru:'Концепт оружия для арсенала охотника на оборотней. Серебряный ствол украшен готическими гравировками, а зазубренные детали напоминают клыки существ, для которых он создан. Рукоять выполнена из фактурного дуба: потертая, но надежная. Вдохновлено эстетикой готических хорроров и серией Resident Evil.', desc_en:'A concept weapon forged for a werewolf hunters arsenal. The silver barrel features gothic engravings, while jagged, fang-like details hint at the creatures it was made to slay. The grip is crafted from textured oak: worn but reliable. Inspired by gothic horror aesthetics and the Resident Evil series.', year:'2025', tools:'Blender, Substance 3D Painter, Photoshop', type_ru:'3D', type_en:'3D', images:[
   'assets/images/g1.png',
