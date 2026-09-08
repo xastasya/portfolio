@@ -62,10 +62,10 @@ thumbnail: 'assets/images/t0.png',
   'assets/images/t4.png'
 ] },
    { id:53, title:'Презентация картины', cat:'graphic', catName:'Graphic Design', catName_ru:'Graphic Design', desc_ru:'cat:'graphic', catName:'Graphic Design', catName_ru:'Graphic Design'', desc_en:'cat:'graphic', catName:'Graphic Design', catName_ru:'Graphic Design'', year:'2026', tools:'Figma', type_ru:'Брендинг', type_en:'Branding', 
-thumbnail: 'assets/images/t0.png',
+thumbnail: 'assets/images/ps1.png',
   images:[
   'assets/images/ps1.png',
-  'assets/images/ps22.png',
+  'assets/images/ps2.png',
   'assets/images/ps3.png',
   'assets/images/ps4.png',
   'assets/images/ps5.png'
