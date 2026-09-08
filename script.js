@@ -70,7 +70,7 @@ thumbnail: 'assets/images/t0.png',
   'assets/images/b2.png',
   'assets/images/b3.png',
   'assets/images/b4.png',
-  'assets/images/b5.png'
+  'assets/images/b5.png',
 ] },
   { id:10, title:'Револьвер охотника', cat:'3d', catName:'3D', catName_ru:'3D', desc_ru:'Концепт оружия для арсенала охотника на оборотней. Серебряный ствол украшен готическими гравировками, а зазубренные детали напоминают клыки существ, для которых он создан. Рукоять выполнена из фактурного дуба: потертая, но надежная. Вдохновлено эстетикой готических хорроров и серией Resident Evil.', desc_en:'A concept weapon forged for a werewolf hunters arsenal. The silver barrel features gothic engravings, while jagged, fang-like details hint at the creatures it was made to slay. The grip is crafted from textured oak: worn but reliable. Inspired by gothic horror aesthetics and the Resident Evil series.', year:'2025', tools:'Blender, Substance 3D Painter, Photoshop', type_ru:'3D', type_en:'3D', images:[
   'assets/images/g1.png',
@@ -460,7 +460,19 @@ thumbnail: 'assets/images/t0.png',
   desc_en:'A large-scale outdoor art installation designed in a low-poly/polygonal style. Engineered the complex multi-faceted geometry of the structure. Developed a color scheme based on ethnic patterns and bold geometric shapes. Supervised the assembly process. Designed for interactive use by park visitors.', year:'2021', tools:'Blender, Photoshop', type_ru:'Арт-объект', type_en:'Art Object', images:[
   'assets/images/in15.png',
   'assets/images/in16.png'
-] }];
+] },
+{ id:51, title:'Враг "The Hollow"', cat:'3d', catName:'3D', catName_ru:'3D', desc_ru:'Каменная статуя-мать с множеством тянущихся рук и зияющей черной бездной вместо живота. Разработала персонажа и анимации построеные на судорожном, неестественном «дыхании» и дерганых движениях конечностей, чтобы передать эффект застывшего экзистенциального ужаса и попытки выбраться из собственной плоти.', desc_en:'A stone mother-statue with multiple reaching arms and a gaping black void for a belly. The animations are built on convulsive, unnatural breathing and jerky limb movements, conveying a sense of frozen existential horror and a desperate struggle to break out of its own flesh.', year:'2025', tools:'Blender, Substance 3D Painter, Photoshop', type_ru:'3D', type_en:'3D', images:[
+  'assets/images/mo1.png',
+  'assets/images/mo2.png',
+  'assets/images/mo3.png',
+  'assets/images/mo4.png'
+   ] },
+    { id:52, title:'UI дизайн для Ghost Exile', cat:'ui', catName:'UI Design', catName_ru:'UI Design', desc_ru:'Мрачный и функциональный UI, сочетающий тактическую ясность с хоррор-эстетикой. Желтые акценты на гранжевом темном фоне передают атмосферу опасности, а четкая структура меню (снаряжение, локации, модификаторы) подчеркивает важность подготовки и командной коммуникации в кооперативе.', desc_en:'A dark, tactical, and atmospheric UI that balances high readability with a gritty horror aesthetic. Yellow accents against a grungy dark background emphasize the sense of danger, while the structured menus for loadouts, locations, and modifiers highlight the crucial pre-mission preparation and teamwork essential for co-op gameplay.', year:'2025', tools:'Figma, Illustrator', type_ru:'UI/UX', type_en:'UI/UX', images:[
+    'assets/images/ge1.png',
+    'assets/images/ge2.png',
+    'assets/images/ge3.png',
+    'assets/images/ge4.png'
+   }];
 
 // ID проектов, которые открываются в вертикальном модале (только изображения)
 const VERTICAL_PROJECT_IDS = [0, 1, 2, 3, 4, 5, 18, 19, 50];
