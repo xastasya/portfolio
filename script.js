@@ -1,8 +1,3 @@
- 
-‎script.js‎
-+1-1Lines changed: 1 addition & 1 deletion
-Original file line number	Diff line number	Diff line change
-@@ -1,1202 +1,1202 @@
 /* ============================================================
    ASTASYA PORTFOLIO — script.js
    ============================================================ */
